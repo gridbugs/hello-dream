@@ -3,4 +3,5 @@
 (package
   (name hello-dream)
   (depends
-    ocaml))
+    ocaml
+    dream))
