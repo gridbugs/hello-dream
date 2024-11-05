@@ -1,3 +1,17 @@
 (executable
-  (public_name hello-dream)
-  (name main))
+ (public_name hello-dream)
+ (name main)
+ (libraries dream common)
+ (preprocess
+  (pps lwt_ppx)))
+
+(rule
+ (targets template.ml)
+ (deps template.eml client.js)
+ (action
+  (run dream_eml %{deps} --workspace %{workspace_root})))
+
+(rule
+  (targets client.js)
+  (deps client/client/client/client.js) ; TODO why is it not just "client/client.js"?
+  (action (run cp %{deps} .)))

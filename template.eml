@@ -1,0 +1,7 @@
+let render () =
+  <html>
+  <body>
+  <h1><%s Common.greet(`Server) %></h1>
+  <script src="/static/client.js"></script>
+  </body>
+  </html>
